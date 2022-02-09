@@ -1,0 +1,28 @@
+#邮件配置
+spring:
+  mail:
+    #邮件服务器地址
+    host: smtp.163.com
+    #协议
+    protocol: smtp
+    #编码格式
+    default-encoding: utf-8
+    #授权码
+    password: RCYQABILBNFMFFTF
+    #邮箱地址
+    username: fanzero0105@163.com
+    #端口
+    port: 25
+
+
+  #rabbitmq配置
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.74.147
+    port: 5672
+    # 消息确认回调
+    publisher-confirm-type: correlated
+    publisher-returns: false
+
+

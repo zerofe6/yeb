@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.theymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>入职欢迎邮件</title>
+    </head>
+<body>
+    欢迎<span th:text="${name}"></span>加入学习大家庭，您的信息如下：
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th>职位</th>
+            <th>职称</th>
+            <th>部门</th>
+        </tr>
+        <tr>
+            <td th:text="${name}"></td>
+            <td th:text="${posName}"></td>
+            <td th:text="${joblevelName}"></td>
+            <td th:text="${departmentName}"></td>
+        </tr>
+    </table>
+
+    <p>
+        只有启程，才会到达理想的目的地；只有拼搏，才会获得辉煌的成功；只有播种，才能有收获；只有奋斗，才能品味幸福的人生。
+    </p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+#邮件配置
+spring:
+  mail:
+    #邮件服务器地址
+    host: smtp.163.com
+    #协议
+    protocol: smtp
+    #编码格式
+    default-encoding: utf-8
+    #授权码
+    password:
+    #邮箱地址
+    username:
+    #端口
+    port: 25
+
+
+  #rabbitmq配置
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.74.149
+    port: 5672
+    # 消息确认回调
+    publisher-confirm-type: correlated
+    publisher-returns: false
+      #开启手动确认
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+
+
+  redis:
+    timeout: 10000ms
+    #    host: 127.0.0.1
+    host: 192.168.74.149
+    port: 6379
+    #    数据库
+    database: 0
+    password: null
+    lettuce:
+      pool:
+        #        最大连接数 默认8
+        max-active: 1024
+        #        最大连接阻塞等待时间 默认-1
+        max-wait: 10000ms
+        #        最大空闲连接
+        max-idle: 200
+        #        最小空闲连接
+        min-idle: 5
+
+
