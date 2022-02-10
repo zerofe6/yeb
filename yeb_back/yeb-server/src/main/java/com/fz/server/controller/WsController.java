@@ -19,8 +19,12 @@ import java.time.LocalDateTime;
  */
 @Controller
 public class WsController {
+    private final SimpMessagingTemplate simpMessagingTemplate;
+
     @Autowired
-    private SimpMessagingTemplate simpMessagingTemplate;
+    public WsController(SimpMessagingTemplate simpMessagingTemplate) {
+        this.simpMessagingTemplate = simpMessagingTemplate;
+    }
 
     @MessageMapping("/ws/chat")
     public void handleMsg(Authentication authentication, ChatMsg chatMsg){

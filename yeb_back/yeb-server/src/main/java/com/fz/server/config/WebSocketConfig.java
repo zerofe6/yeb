@@ -151,6 +151,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     }
 
+
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> list) {
 

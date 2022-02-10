@@ -3,6 +3,7 @@ package com.fz.server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * 启动类
@@ -11,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 //@MapperScan("com.fz.server.mapper")
+@EnableWebMvc
 @EnableScheduling
 public class YebApplication {
     public static void main(String[] args) {
