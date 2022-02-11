@@ -5,7 +5,11 @@
 # IntelliJ project files
 .idea
 *.iml
+*.class
 out
 gen
 fsfs_client.conf
 *.txt
+application-realproduction.yml
+application-production.yml
+fdfs_client.conf
