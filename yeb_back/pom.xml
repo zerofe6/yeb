@@ -25,14 +25,14 @@
     <build>
         <pluginManagement>
               <plugins>
-                <plugin>
-                  <groupId>org.springframework.boot</groupId>
-                  <artifactId>spring-boot-maven-plugin</artifactId>
+<!--                <plugin>-->
+<!--                  <groupId>org.springframework.boot</groupId>-->
+<!--                  <artifactId>spring-boot-maven-plugin</artifactId>-->
 <!--                  &lt;!&ndash;  设定主配置类 &ndash;&gt;-->
 <!--                  <configuration>-->
 <!--                    <mainClass>com.fz.mail.MailApplication</mainClass>-->
 <!--                  </configuration>-->
-                </plugin>
+<!--                </plugin>-->
                   <!-- 资源文件拷贝插件，真的很重要，不然打包其他模块时会报错："xxx类找不到" -->
 <!--                  <plugin>-->
 <!--                      <groupId>org.apache.maven.plugins</groupId>-->

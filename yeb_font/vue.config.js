@@ -27,7 +27,7 @@ module.exports = {
     // 以上的ip和端口是我们本机的;下面为需要跨域的
     proxy: { // 配置跨域
       '/': {
-        target: 'http://localhost:8081',
+        target: 'http://106.14.106.9:80',
         ws: false,
         changeOrigin: true, // 允许跨域
         Headers: '',

@@ -34,17 +34,21 @@ import java.util.Date;
 public class MailReceiver {
     private static final Logger LOGGER = LoggerFactory.getLogger(MailReceiver.class);
 
-    @Autowired
-    private JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
+
+    private final MailProperties mailProperties;
+
+    private final TemplateEngine engine;
+
+    private final RedisTemplate redisTemplate;
 
     @Autowired
-    private MailProperties mailProperties;
-
-    @Autowired
-    private TemplateEngine engine;
-
-    @Autowired
-    private RedisTemplate redisTemplate;
+    public MailReceiver(JavaMailSender javaMailSender, MailProperties mailProperties, TemplateEngine engine, RedisTemplate redisTemplate) {
+        this.javaMailSender = javaMailSender;
+        this.mailProperties = mailProperties;
+        this.engine = engine;
+        this.redisTemplate = redisTemplate;
+    }
 
 //    @RabbitListener(queues = "mail.welcome")
 //    @RabbitListener(queues = MailConstants.MAIL_QUEUE_NAME)
