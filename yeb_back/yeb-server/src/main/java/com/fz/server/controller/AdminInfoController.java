@@ -55,6 +55,12 @@ public class AdminInfoController {
     public RespBean updateAdminUserFace(MultipartFile file,Integer id,Authentication authentication){
         String[] filePath = FastDFSUtils.upload(file);
         String url = FastDFSUtils.getTrackerUrl()+filePath[0]+"/"+filePath[1];
+        if(id == null){
+            return RespBean.warning("修改用户头像的用户id不能为空！！！");
+        }
+        System.out.println("=======================================");
+        System.out.println("上传文件后拿到的URL 为："+url);
+        System.out.println("=======================================");
         return adminService.updateAdminUserFace(url,id,authentication);
     }
 }

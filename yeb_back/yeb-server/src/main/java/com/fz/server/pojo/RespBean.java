@@ -40,6 +40,15 @@ public class RespBean {
     public static  RespBean error(String message){
         return  new RespBean(500,message,null);
     }
+
+    /**
+     * 返回警告结果
+     * @param message
+     * @return
+     */
+    public static  RespBean warning(String message){
+        return  new RespBean(222,message,null);
+    }
     public static  RespBean error(String message,Object obj){
         return  new RespBean(500,message,obj);
     }

@@ -79,8 +79,8 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     public RespBean login(String username, String password,String code, HttpServletRequest request) {
         String captcha = (String) request.getSession().getAttribute("captcha");
 //        System.out.println("处理登录请求，存放在session中的code为："+captcha);
-        if(StringUtils.isEmpty(code)||!captcha.equalsIgnoreCase(code)){
-            return RespBean.error("验证码输入错误，请重新输入");
+        if(!StringUtils.hasText(code) ||!captcha.equalsIgnoreCase(code)){
+            return RespBean.warning("验证码输入错误，请重新输入");
         }
         System.out.println("用户名："+username);
         System.out.println("密码："+password);
@@ -89,10 +89,10 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         if(userDetails==null||!passwordEncoder.matches(password,userDetails.getPassword())){
             System.out.println("用户名："+username);
             System.out.println("密码："+password);
-            return RespBean.error("用户名或密码不正确");
+            return RespBean.warning("用户名或密码不正确");
         }
         if(!userDetails.isEnabled()){
-            return RespBean.error("该账号已不能使用，请联系管理员");
+            return RespBean.warning("该账号已不能使用，请联系管理员");
         }
         // 更新security登录用户对象
         UsernamePasswordAuthenticationToken authenticationToken=
