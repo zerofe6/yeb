@@ -4,6 +4,7 @@ import org.csource.fastdfs.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
@@ -27,7 +28,13 @@ public class FastDFSUtils {
      */
     static {
         try {
-            String filePath = new ClassPathResource("fdfs_client.conf").getFile().getAbsolutePath();
+            //服务器上jar包不能使用getfile
+//            String filePath = new ClassPathResource("fdfs_client.conf").getFile().getAbsolutePath();
+            ClassPathResource classPathResource = new ClassPathResource("fdfs_client.conf");
+            String filePath = ResourceUtils.getURL("classpath:")+"fdfs_client.conf";
+            System.out.println("==============================================");
+            System.out.println("获取到的文件路径为："+filePath);
+            System.out.println("==============================================");
             ClientGlobal.init(filePath);
         } catch (Exception exception) {
 //            exception.printStackTrace();

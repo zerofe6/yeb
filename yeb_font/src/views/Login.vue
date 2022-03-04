@@ -71,6 +71,7 @@ export default {
             // alert(JSON.stringify(resp))
             if (resp) {
               this.loading = false
+              // console.log('返回结果为' + '' + resp.data.code)
               const tokenStr = resp.obj.tokenHead + resp.obj.token
               window.sessionStorage.setItem('tokenStr', tokenStr)
               // 如果输入的地址不是登录地址 则重定向到指定地址
